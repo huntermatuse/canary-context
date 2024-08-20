@@ -28,17 +28,18 @@ jobs:
 
       - name: Build project
         run: cargo build --release
+        working-directory: ./canary-context
 
       - name: Upload Linux Artifact
         if: matrix.os == 'ubuntu-latest'
         uses: actions/upload-artifact@v3
         with:
           name: linux-binary
-          path: target/release/canary-context
+          path: canary-context/target/release/canary-context
 
       - name: Upload Windows Artifact
         if: matrix.os == 'windows-latest'
         uses: actions/upload-artifact@v3
         with:
           name: windows-binary
-          path: target\release\canary-context.exe
+          path: canary-context\target\release\canary-context.exe
