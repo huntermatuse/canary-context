@@ -26,9 +26,6 @@ jobs:
           profile: minimal
           override: true
 
-      - name: Install dependencies
-        run: cargo build --release
-
       - name: Build project
         run: cargo build --release
 
